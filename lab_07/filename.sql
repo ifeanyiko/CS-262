@@ -29,9 +29,10 @@ CREATE TABLE PlayerGame (
 	gameID integer REFERENCES Game(ID), 
 	playerID integer REFERENCES Player(ID),
 	score integer
+	playerLocation varchar(50),
 	);
 
--- Every monopoly game involves property, every player has a piece but not every pice has a player
+-- Every monopoly game involves players owning properties
 CREATE TABLE Property (
 	ownerID integer REFERENCES Player(ID),
 	propName varchar(50),
